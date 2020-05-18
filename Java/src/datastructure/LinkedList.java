@@ -96,6 +96,72 @@ public class LinkedList {
         }
         return temp;
     }
+    public void reverse(){
+        if(first==last)return;
+        var temp1=first;
+        var temp2=temp1.next;
+
+
+        first=last;
+        last=temp1;
+
+        temp1.next=null;
+        while(temp2!=null){
+            var temp3=temp2.next;
+            temp2.next=temp1;
+            temp1=temp2;
+            temp2=temp3;
+
+        }
+        //temp2.next=temp1;
+    }
+    public int getkthelement(int k){
+        if(k<=0)throw new IllegalArgumentException();
+        var temp1=first;
+        var temp2=first;
+        var count=0;
+        while(temp2.next!=null){
+            if(count<k-1){
+                temp2=temp2.next;
+                count++;
+            }else{
+                temp2=temp2.next;
+                temp1=temp1.next;
+                count++;
+            }
+        }
+        return temp1.value;
+    }
+    public void printMiddle(){
+        var a=first;
+        var b=first;
+        while(b.next!=null){
+            if(b.next.next==null){
+                System.out.println(a.value);
+                a=a.next;
+                b=b.next;
+                System.out.println(a.value);
+                return;
+            }else{
+                a=a.next;
+                b=b.next.next;
+            }
+        }
+        System.out.println(a.value);
+        return;
+    }
+    public boolean hasLoop(){
+        var a=first;
+        var b=first;
+        while(b.next!=null){
+            a=a.next;
+            b=b.next.next;
+            if(a==b){
+                return true;
+            }
+        }
+        return false;
+    }
 
 
 }
