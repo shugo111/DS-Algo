@@ -1,12 +1,25 @@
-package datastructure;
+package placement;
 
-
+//For example, consider the list of strings strArr = ['aba','bcb','ece','aa','ee']. There are multiple queries against the list of string given as queries = ['1-3','2-5','2-2']. These strings represent two dashes delimited integers r and l, the start and end indices of the interval. Using 1-based indexing in the string array, the interval 1-3 contains two strings that start and end with a vowel: 'aba'and 'ece' The interval 2-5 also has three. The third interval, from 2-2, the only element in the interval, 'bcb' does not begin and end with a vowel. The
+//return array for the queries is [2,3,0].
+//
+//Given a string array that contains n elements, each composed of lowercase English letters, and q queries, each of the format l-r, for each, determine how many strings starting from index l and ending at index r have vowels as the first and last character.
+//
+//Function Description
+//
+//Complete the hasVowels function in the editor below. It must return an array of integers that represents the result of each query in the order given.
+//
+//hasVowel has the following parameters.
+//strArr: an array of n strings to test at indices [1-n]
+//query: an array of q string, each of which describes an interval l-r using integers delimited by a dash
+//
+//Constraints 1 sn, q 105 1 s rs n 1 size of strArr[i] < 10
 import java.io.*;
 import java.util.*;
 
 
 
-public class Main {
+public class Vowles {
 
 
     static List<Integer> hasVowels(List<String> strArr, List<String> query) {
